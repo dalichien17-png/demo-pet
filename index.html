@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安琪寵物美容工作室 - 桃園巷弄溫感寵物洗護 1對1專業照顧</title>
+    <style>
+        :root {
+            --bg-warm: #fcfbf7;
+            --card-bg: #ffffff;
+            --card-border: rgba(163, 177, 138, 0.3);
+            --primary-green: #3a5a40;
+            --soft-green: #588157;
+            --wood-brown: #a5a58d;
+            --wood-dark: #6b705c;
+            --accent-gold: #dda15e;
+            --text-dark: #2b2d42;
+            --text-gray: #6c757d;
+            --neon-line: #06c755;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-warm);
+            color: var(--text-dark);
+            line-height: 1.65;
+            padding-bottom: 70px;
+        }
+
+        /* 頂部導覽列 (專注 FB & LINE 精準導流) */
+        .top-nav {
+            background: rgba(253, 251, 247, 0.95);
+            border-bottom: 1px solid var(--card-border);
+            padding: 12px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(12px);
+        }
+
+        .brand-logo {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 1px;
+        }
+
+        .brand-logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-fb {
+            background: #1877f2;
+            color: #ffffff;
+        }
+
+        .nav-line {
+            background: var(--neon-line);
+            color: #ffffff;
+        }
+
+        .nav-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero 主視覺區塊 */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(180deg, rgba(252,251,247,0.4) 0%, rgba(252,251,247,0.95) 100%), url('hero_bg.jpg') center/cover no-repeat;
+            padding: 90px 20px 50px;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(88, 129, 87, 0.15);
+            border: 1px solid var(--soft-green);
+            color: var(--primary-green);
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 2.3rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .hero-title span {
+            color: var(--primary-green);
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: var(--text-gray);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-line), #009933);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 14px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(6, 199, 85, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-secondary {
+            background: #1877f2;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 14px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(24, 119, 242, 0.25);
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-tag {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary-green);
+            font-weight: 800;
+        }
+
+        /* 品牌故事卡片 */
+        .story-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+
+        .story-img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-content {
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-content h3 {
+            font-size: 1.25rem;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .story-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+
+        /* 爆款服務菜單展示網格 */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--soft-green);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-body {
+            padding: 18px;
+        }
+
+        .menu-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-price {
+            color: var(--primary-green);
+            font-size: 1.15rem;
+            font-weight: 900;
+        }
+
+        .menu-desc {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* 職人三大堅持卡片 */
+        .craft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin-bottom: 50px;
+        }
+
+        .craft-item {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .craft-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .craft-title {
+            font-size: 1.05rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .craft-desc {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.55;
+        }
+
+        /* 毛爸毛媽好評見證區塊 */
+        .review-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 28px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 22px;
+            align-items: center;
+            margin-bottom: 50px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+        }
+
+        .review-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .review-quote {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-style: italic;
+            line-height: 1.65;
+            margin-bottom: 10px;
+        }
+
+        .review-author {
+            color: var(--primary-green);
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        /* 哥吉拉獨家促銷福利卡片 */
+        .godzilla-banner {
+            background: linear-gradient(135deg, rgba(88,129,87,0.12), rgba(253,251,247,0.95));
+            border: 2px solid var(--soft-green);
+            border-radius: 16px;
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(58, 90, 64, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .godzilla-tag {
+            background: var(--soft-green);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .godzilla-title {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .godzilla-desc {
+            color: var(--text-gray);
+            font-size: 0.92rem;
+            max-width: 580px;
+            margin: 0 auto 18px;
+            line-height: 1.6;
+        }
+
+        .btn-godzilla {
+            background: var(--neon-line);
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 1.05rem;
+            padding: 13px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
+        }
+
+        /* 頁尾資訊 */
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 25px 20px;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .story-card, .review-card {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部導覽列 (專注 FB & LINE 精準導流) -->
+    <nav class="top-nav">
+        <a href="index.html" class="brand-logo">🐾 安琪<span>寵物美容</span></a>
+        <div class="nav-actions">
+            <a href="https://facebook.com" target="_blank" class="nav-btn nav-fb">🔵 FB 官方粉專</a>
+            <a href="https://lin.ee/angiepet" target="_blank" class="nav-btn nav-line">🟢 LINE 預約洗護</a>
+        </div>
+    </nav>
+
+    <!-- Hero 主視覺 Banner -->
+    <section class="hero-section">
+        <div class="hero-badge">🌸 桃園巷弄好評熱推 1對1溫感寵物洗護</div>
+        <h1 class="hero-title">讓每隻寶貝像回家一樣放鬆<br><span>安琪寵物美容工作室</span></h1>
+        <p class="hero-desc">社工心靈關懷 ✕ 專業美容師阿傑雙人細心照護 ✕ 100% 天然草本低敏洗劑。<br>用照顧家人的耐心溫柔對待，讓洗澡剪毛不再是毛孩的噩夢！</p>
+        <div class="hero-cta-group">
+            <a href="https://lin.ee/angiepet" class="btn-primary" target="_blank">🟢 LINE 線上預約 (1對1專屬時段)</a>
+            <a href="https://facebook.com" class="btn-secondary" target="_blank">🔵 FB 查看毛孩造型作品與評論</a>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- 品牌故事區塊 -->
+        <div class="section-header">
+            <div class="section-tag">OUR STORY</div>
+            <h2 class="section-title">創辦人安琪與阿傑的白衣天使故事</h2>
+        </div>
+
+        <div class="story-card">
+            <img src="story_img.jpg" alt="安琪溫柔為法鬥吹乾毛髮，客人木村拓哉在後方休息" class="story-img">
+            <div class="story-content">
+                <h3>「雖然沒當上醫生，但現在照顧毛孩的樣子，不就是白衣天使嗎？」</h3>
+                <p>從小想當醫生的安琪，經歷補習重考仍考不上獸醫，最後隨便念了社工系。低薪與壓力讓她常躲著哭，只有領養的老吉娃娃「豆豆」默默舔她的眼淚。</p>
+                <p>直到帶豆豆去洗澡認識了溫柔美容師阿傑，兩人結婚後搬回桃園老家開了小店。剛開始不懂行銷只會發傳單，直到遇見像木村拓哉的客人提醒『Google 地圖搜尋不到你們！』才徹底醒悟。</p>
+                <p>用 I DOOR 印鈔怪獸做了一頁式門面與地圖留評系統，如今累積 200+ 五星好評。爸媽來店裡看她，媽媽笑著說：『你現在照顧毛孩的樣子，不就是一個白衣天使嗎？』</p>
+            </div>
+        </div>
+
+        <!-- 服務價目區塊 -->
+        <div class="section-header">
+            <div class="section-tag">SERVICES & PRICES</div>
+            <h2 class="section-title">安琪寵物美容 服務與價目表</h2>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="service_bath.jpg" alt="阿傑師傅細心為柯基洗微泡草本舒壓洗澡" class="menu-img">
+                <div class="menu-body">
+                    <div class="menu-title">
+                        狗狗草本舒壓洗澡
+                        <span class="menu-price">$880 起</span>
+                    </div>
+                    <p class="menu-desc">含剪指甲、清耳朵、腳底毛修剪與擠肛門腺。採用草本低敏泡泡，護理毛髮皮脂膜。</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="service_trim.jpg" alt="安琪為貴賓狗吹乾與造型修剪" class="menu-img">
+                <div class="menu-body">
+                    <div class="menu-title">
+                        狗狗全套造型美容
+                        <span class="menu-price">$1,380 起</span>
+                    </div>
+                    <p class="menu-desc">專屬泰迪熊/日系精緻手剪造型，搭配微泡舒壓洗澡與全套基礎保養。</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="service_care.jpg" alt="安琪溫柔為法鬥修剪指甲" class="menu-img">
+                <div class="menu-body">
+                    <div class="menu-title">
+                        單項基礎局部護理
+                        <span class="menu-price">$150 起</span>
+                    </div>
+                    <p class="menu-desc">溫柔修剪指甲 ($150) / 清潔耳朵 ($150) / 腳底毛修剪 ($200)，溫柔不硬拉。</p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img src="service_menu.jpg" alt="店內實木服務價目看板" class="menu-img">
+                <div class="menu-body">
+                    <div class="menu-title">
+                        完整服務價目看板
+                        <span class="menu-price">透明公開</span>
+                    </div>
+                    <p class="menu-desc">貓咪基礎洗澡 $780 起 / 全身大美容 $1,480 起。全品項體重計價透明不卡關。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 職人三大堅持 -->
+        <div class="section-header">
+            <div class="section-tag">OUR COMMITMENT</div>
+            <h2 class="section-title">安琪與阿傑的 3 大安心堅持</h2>
+        </div>
+
+        <div class="craft-grid">
+            <div class="craft-item">
+                <span class="craft-icon">🌿</span>
+                <div class="craft-title">100% 天然低敏草本洗劑</div>
+                <div class="craft-desc">嚴選不含矽靈與防腐劑之天然洗劑，專為敏感肌與高齡毛孩調配。</div>
+            </div>
+            <div class="craft-item">
+                <span class="craft-icon">🛁</span>
+                <div class="craft-title">1 對 1 溫感不催促照護</div>
+                <div class="craft-desc">結合社工情緒撫慰經驗，適時安撫緊張毛孩，絕不使用打罵或催促。</div>
+            </div>
+            <div class="craft-item">
+                <span class="craft-icon">✨</span>
+                <div class="craft-title">每日全店三道消毒保證</div>
+                <div class="craft-desc">美容檯、洗澡槽與吹風工具每場次徹底消毒，環境維持明亮無異味。</div>
+            </div>
+        </div>
+
+        <!-- 毛爸毛媽好評見證區塊 -->
+        <div class="review-card">
+            <img src="dogs_jerky.jpg" alt="法鬥與吉娃娃開心地享用手作雞肉乾" class="review-img">
+            <div>
+                <div class="review-quote">「原本我家法鬥超怕洗澡剪指甲，來安琪這裡竟然乖乖配合！洗完還能拿到安琪手作的雞肉乾，兩隻寶貝愛死了！Google 地圖 200 多則五星好評真的名不虛傳！」</div>
+                <div class="review-author">—— 桃園在地毛媽 許小姐 5 星好評讚譽</div>
+            </div>
+        </div>
+
+        <!-- 哥吉拉獨家促銷福利卡片 -->
+        <div class="godzilla-banner">
+            <span class="godzilla-tag">🦖 哥吉拉首月好評獨家福利</span>
+            <h3 class="godzilla-title">留 Google 5 星好評 ➔ 現領「手作天然雞肉乾」！</h3>
+            <p class="godzilla-desc">凡接寶貝時掃碼出示哥吉拉專屬二維碼並留下 Google 5 星好評，安琪現場免費招待「自烘天然無添加雞肉乾乙包」！還能自動加入 LINE 預約下次專屬洗護時段！</p>
+            <a href="https://lin.ee/angiepet" class="btn-godzilla" target="_blank">⚡ 點此加 LINE 領取雞肉乾兌換券</a>
+        </div>
+
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>© 2026 ANGIE PET GROOMING STUDIO 安琪寵物美容工作室 All Rights Reserved.</p>
+        <p style="margin-top: 5px; color: #666;">Powered by I DOOR 印鈔怪獸 24H 極速數位門面</p>
+    </footer>
+
+</body>
+</html>
