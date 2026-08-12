@@ -6,17 +6,16 @@
     <title>安琪寵物美容工作室 - 桃園巷弄溫感寵物洗護 1對1專業照顧</title>
     <style>
         :root {
-            --bg-warm: #fcfbf7;
-            --card-bg: #ffffff;
-            --card-border: rgba(163, 177, 138, 0.3);
-            --primary-green: #3a5a40;
-            --soft-green: #588157;
-            --wood-brown: #a5a58d;
-            --wood-dark: #6b705c;
-            --accent-gold: #dda15e;
-            --text-dark: #2b2d42;
-            --text-gray: #6c757d;
+            --bg-dark: #061913;
+            --card-bg: #0e271f;
+            --card-border: rgba(212, 175, 55, 0.35);
+            --primary-emerald: #144536;
+            --accent-gold: #d4af37;
+            --soft-gold: #f3e5ab;
+            --text-light: #f1f7f5;
+            --text-muted: #9bb3aa;
             --neon-line: #06c755;
+            --fb-blue: #1877f2;
         }
 
         * {
@@ -27,15 +26,16 @@
         }
 
         body {
-            background-color: var(--bg-warm);
-            color: var(--text-dark);
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 0%, #11382d 0%, #061913 75%);
+            color: var(--text-light);
             line-height: 1.65;
             padding-bottom: 70px;
         }
 
-        /* 頂部導覽列 (專注 FB & LINE 精準導流) */
+        /* 頂部導覽列 (翡翠金邊邊框 & 直擊導流) */
         .top-nav {
-            background: rgba(253, 251, 247, 0.95);
+            background: rgba(6, 25, 19, 0.95);
             border-bottom: 1px solid var(--card-border);
             padding: 12px 5%;
             position: sticky;
@@ -50,7 +50,7 @@
         .brand-logo {
             font-size: 1.25rem;
             font-weight: 900;
-            color: var(--primary-green);
+            color: var(--accent-gold);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -59,7 +59,7 @@
         }
 
         .brand-logo span {
-            color: var(--accent-gold);
+            color: var(--text-light);
         }
 
         .nav-actions {
@@ -80,7 +80,7 @@
         }
 
         .nav-fb {
-            background: #1877f2;
+            background: var(--fb-blue);
             color: #ffffff;
         }
 
@@ -97,17 +97,17 @@
         /* Hero 主視覺區塊 */
         .hero-section {
             position: relative;
-            background: linear-gradient(180deg, rgba(252,251,247,0.4) 0%, rgba(252,251,247,0.95) 100%), url('hero_bg.jpg') center/cover no-repeat;
-            padding: 90px 20px 50px;
+            background: linear-gradient(180deg, rgba(6,25,19,0.3) 0%, rgba(6,25,19,0.95) 100%), url('hero_bg.jpg') center/cover no-repeat;
+            padding: 95px 20px 55px;
             text-align: center;
             border-bottom: 1px solid var(--card-border);
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(88, 129, 87, 0.15);
-            border: 1px solid var(--soft-green);
-            color: var(--primary-green);
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--soft-gold);
             font-size: 0.85rem;
             font-weight: 800;
             padding: 5px 16px;
@@ -119,14 +119,14 @@
         .hero-title {
             font-size: 2.3rem;
             font-weight: 900;
-            color: var(--text-dark);
+            color: var(--text-light);
             margin-bottom: 15px;
             line-height: 1.3;
         }
 
         .hero-title span {
-            color: var(--primary-green);
-            background: linear-gradient(135deg, var(--primary-green), var(--accent-gold));
+            color: var(--accent-gold);
+            background: linear-gradient(135deg, var(--soft-gold), var(--accent-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -134,7 +134,7 @@
         .hero-desc {
             max-width: 650px;
             margin: 0 auto 30px;
-            color: var(--text-gray);
+            color: var(--text-muted);
             font-size: 1.02rem;
             line-height: 1.7;
         }
@@ -154,12 +154,12 @@
             padding: 14px 26px;
             border-radius: 8px;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(6, 199, 85, 0.3);
+            box-shadow: 0 4px 20px rgba(6, 199, 85, 0.35);
             transition: transform 0.2s;
         }
 
         .btn-secondary {
-            background: #1877f2;
+            background: var(--fb-blue);
             color: #ffffff;
             font-weight: 800;
             font-size: 1rem;
@@ -196,11 +196,11 @@
 
         .section-title {
             font-size: 1.75rem;
-            color: var(--primary-green);
+            color: var(--soft-gold);
             font-weight: 800;
         }
 
-        /* 品牌故事卡片 */
+        /* 品牌故事卡片 (商業信任版) */
         .story-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -210,13 +210,13 @@
             grid-template-columns: 1fr 1fr;
             gap: 0;
             margin-bottom: 50px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .story-img {
             width: 100%;
             height: 100%;
-            min-height: 320px;
+            min-height: 340px;
             object-fit: cover;
             display: block;
         }
@@ -230,19 +230,27 @@
 
         .story-content h3 {
             font-size: 1.25rem;
-            color: var(--primary-green);
-            margin-bottom: 12px;
-            line-height: 1.4;
+            color: var(--accent-gold);
+            margin-bottom: 14px;
+            line-height: 1.45;
         }
 
         .story-content p {
-            color: var(--text-gray);
+            color: var(--text-muted);
             font-size: 0.9rem;
             line-height: 1.65;
             margin-bottom: 12px;
         }
 
-        /* 爆款服務菜單展示網格 */
+        .story-highlight {
+            color: var(--soft-gold);
+            font-weight: 700;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 10px;
+            margin-top: 5px;
+        }
+
+        /* 服務價目展示網格 */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -256,12 +264,11 @@
             border-radius: 12px;
             overflow: hidden;
             transition: transform 0.3s, border-color 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .menu-card:hover {
             transform: translateY(-5px);
-            border-color: var(--soft-green);
+            border-color: var(--accent-gold);
         }
 
         .menu-img {
@@ -278,7 +285,7 @@
         .menu-title {
             font-size: 1.1rem;
             font-weight: 800;
-            color: var(--text-dark);
+            color: var(--text-light);
             margin-bottom: 6px;
             display: flex;
             justify-content: space-between;
@@ -286,13 +293,13 @@
         }
 
         .menu-price {
-            color: var(--primary-green);
+            color: var(--accent-gold);
             font-size: 1.15rem;
             font-weight: 900;
         }
 
         .menu-desc {
-            color: var(--text-gray);
+            color: var(--text-muted);
             font-size: 0.85rem;
             line-height: 1.5;
         }
@@ -306,12 +313,11 @@
         }
 
         .craft-item {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--card-border);
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .craft-icon {
@@ -322,20 +328,20 @@
 
         .craft-title {
             font-size: 1.05rem;
-            color: var(--primary-green);
+            color: var(--accent-gold);
             font-weight: 700;
             margin-bottom: 8px;
         }
 
         .craft-desc {
             font-size: 0.85rem;
-            color: var(--text-gray);
+            color: var(--text-muted);
             line-height: 1.55;
         }
 
         /* 毛爸毛媽好評見證區塊 */
         .review-card {
-            background: #ffffff;
+            background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 28px;
@@ -344,7 +350,7 @@
             gap: 22px;
             align-items: center;
             margin-bottom: 50px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .review-img {
@@ -356,31 +362,31 @@
 
         .review-quote {
             font-size: 1rem;
-            color: var(--text-dark);
+            color: var(--text-light);
             font-style: italic;
             line-height: 1.65;
             margin-bottom: 10px;
         }
 
         .review-author {
-            color: var(--primary-green);
+            color: var(--accent-gold);
             font-size: 0.88rem;
             font-weight: 700;
         }
 
         /* 哥吉拉獨家促銷福利卡片 */
         .godzilla-banner {
-            background: linear-gradient(135deg, rgba(88,129,87,0.12), rgba(253,251,247,0.95));
-            border: 2px solid var(--soft-green);
+            background: linear-gradient(135deg, rgba(6,199,85,0.12), rgba(14,39,31,0.95));
+            border: 2px solid var(--neon-line);
             border-radius: 16px;
             padding: 32px 20px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(58, 90, 64, 0.1);
+            box-shadow: 0 0 30px rgba(6, 199, 85, 0.15);
             margin-bottom: 40px;
         }
 
         .godzilla-tag {
-            background: var(--soft-green);
+            background: var(--neon-line);
             color: #ffffff;
             font-weight: 800;
             font-size: 0.8rem;
@@ -392,13 +398,13 @@
 
         .godzilla-title {
             font-size: 1.5rem;
-            color: var(--primary-green);
+            color: var(--text-light);
             font-weight: 900;
             margin-bottom: 10px;
         }
 
         .godzilla-desc {
-            color: var(--text-gray);
+            color: var(--text-muted);
             font-size: 0.92rem;
             max-width: 580px;
             margin: 0 auto 18px;
@@ -414,7 +420,7 @@
             border-radius: 8px;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.35);
         }
 
         /* 頁尾資訊 */
@@ -422,7 +428,7 @@
             border-top: 1px solid var(--card-border);
             padding: 25px 20px;
             text-align: center;
-            color: var(--text-gray);
+            color: var(--text-muted);
             font-size: 0.85rem;
         }
 
@@ -460,19 +466,25 @@
 
     <div class="container">
 
-        <!-- 品牌故事區塊 -->
+        <!-- 品牌故事區塊 (商業信任宣言版) -->
         <div class="section-header">
             <div class="section-tag">OUR STORY</div>
-            <h2 class="section-title">創辦人安琪與阿傑的白衣天使故事</h2>
+            <h2 class="section-title">安琪寵物美容 的創立初衷</h2>
         </div>
 
         <div class="story-card">
             <img src="story_img.jpg" alt="安琪溫柔為法鬥吹乾毛髮，客人木村拓哉在後方休息" class="story-img">
             <div class="story-content">
-                <h3>「雖然沒當上醫生，但現在照顧毛孩的樣子，不就是白衣天使嗎？」</h3>
-                <p>從小想當醫生的安琪，經歷補習重考仍考不上獸醫，最後隨便念了社工系。低薪與壓力讓她常躲著哭，只有領養的老吉娃娃「豆豆」默默舔她的眼淚。</p>
-                <p>直到帶豆豆去洗澡認識了溫柔美容師阿傑，兩人結婚後搬回桃園老家開了小店。剛開始不懂行銷只會發傳單，直到遇見像木村拓哉的客人提醒『Google 地圖搜尋不到你們！』才徹底醒悟。</p>
-                <p>用 I DOOR 印鈔怪獸做了一頁式門面與地圖留評系統，如今累積 200+ 五星好評。爸媽來店裡看她，媽媽笑著說：『你現在照顧毛孩的樣子，不就是一個白衣天使嗎？』</p>
+                <h3>「用照顧家人與生命的心，溫柔對待每一隻來到這裡的毛孩。」</h3>
+                <p><strong>【從社工關懷，到毛孩的情緒撫慰】</strong><br>
+                創辦人安琪擁有社工背景，曾經夢想成為救人的醫生。在與自家老吉娃娃「豆豆」相伴的歲月中，深刻體會到寵物對人類無條件的愛。這份同理心，成為她與資深美容師阿傑創立工作室的核心——我們不只提供洗護，更注重毛孩在洗澡剪毛時的心理感受。</p>
+                
+                <p><strong>【1 對 1 溫感照護，打造無壓力的洗護體驗】</strong><br>
+                我們堅持不催促、不打罵、絕不長時間關籠。從桃園巷弄小店出發，憑藉對環境消毒與低敏洗劑的堅持，在 Google 地圖累積了 200+ 則實名 5 星好評，成為在地毛爸毛媽最放心的寵物洗護殿堂。</p>
+                
+                <p class="story-highlight">
+                「雖然沒有穿上醫生的白袍，但能成為守護毛孩健康與笑容的白衣天使，就是我們最驕傲的事。」
+                </p>
             </div>
         </div>
 
