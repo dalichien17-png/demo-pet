@@ -6,15 +6,12 @@
     <title>安琪寵物美容工作室 - 桃園巷弄溫感寵物洗護 1對1專業照顧</title>
     <style>
         :root {
-            /* 1:1 還原 order.html 風格 1：明亮翡翠大理石配色 */
-            --bg-marble: #f3f7f4;
-            --card-bg: rgba(255, 255, 255, 0.92);
-            --card-border: #c2d8cc;
+            /* 1:1 還原 order.html 風格 1：翡翠大理石質感配色 */
             --primary-emerald: #1e4d3b;
             --soft-emerald: #3a755d;
             --accent-gold: #c6930a;
             --text-dark: #162b21;
-            --text-gray: #4d665a;
+            --text-gray: #3d5449;
             --neon-line: #06c755;
             --fb-blue: #1877f2;
         }
@@ -27,17 +24,17 @@
         }
 
         body {
-            /* 若有 bg_emerald.jpg 會優先載入圖片，沒有則顯示高質感翡翠大理石漸層 */
-            background: linear-gradient(135deg, #eaf2ed 0%, #f7faf8 50%, #e2ede6 100%), url('bg_emerald.jpg') center/cover fixed no-repeat;
+            /* 完整固定背景圖，若無圖檔則優雅退回翡翠漸層 */
+            background: url('bg_emerald.jpg') center/cover fixed no-repeat, linear-gradient(135deg, #eaf2ed 0%, #f7faf8 50%, #e2ede6 100%);
             color: var(--text-dark);
             line-height: 1.65;
             padding-bottom: 70px;
         }
 
-        /* 頂部導覽列 (明亮翡翠金邊) */
+        /* 頂部導覽列 (毛玻璃導航) */
         .top-nav {
-            background: rgba(243, 247, 244, 0.92);
-            border-bottom: 1px solid var(--card-border);
+            background: rgba(243, 247, 244, 0.85);
+            border-bottom: 1px solid rgba(30, 77, 59, 0.2);
             padding: 12px 5%;
             position: sticky;
             top: 0;
@@ -46,6 +43,7 @@
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .brand-logo {
@@ -98,15 +96,15 @@
         /* Hero 主視覺區塊 */
         .hero-section {
             position: relative;
-            background: linear-gradient(180deg, rgba(243,247,244,0.4) 0%, rgba(243,247,244,0.95) 100%), url('hero_bg.jpg') center/cover no-repeat;
+            background: linear-gradient(180deg, rgba(243,247,244,0.3) 0%, rgba(243,247,244,0.85) 100%), url('hero_bg.jpg') center/cover no-repeat;
             padding: 95px 20px 55px;
             text-align: center;
-            border-bottom: 1px solid var(--card-border);
+            border-bottom: 1px solid rgba(30, 77, 59, 0.2);
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(30, 77, 59, 0.1);
+            background: rgba(255, 255, 255, 0.9);
             border: 1px solid var(--soft-emerald);
             color: var(--primary-emerald);
             font-size: 0.85rem;
@@ -115,6 +113,7 @@
             border-radius: 20px;
             margin-bottom: 18px;
             letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .hero-title {
@@ -138,6 +137,7 @@
             color: var(--text-gray);
             font-size: 1.02rem;
             line-height: 1.7;
+            font-weight: 500;
         }
 
         .hero-cta-group {
@@ -155,7 +155,7 @@
             padding: 14px 26px;
             border-radius: 8px;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(6, 199, 85, 0.3);
+            box-shadow: 0 4px 20px rgba(6, 199, 85, 0.35);
             transition: transform 0.2s;
         }
 
@@ -201,18 +201,23 @@
             font-weight: 800;
         }
 
-        /* 品牌故事卡片 (明亮翡翠框版) */
-        .story-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
+        /* 核心靈魂：高透光翡翠毛玻璃卡片 (讓大理石紋理清晰可見) */
+        .story-card, .menu-card, .craft-item, .review-card {
+            background: rgba(255, 255, 255, 0.82) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(30, 77, 59, 0.25) !important;
+            box-shadow: 0 8px 30px rgba(30, 77, 59, 0.12) !important;
             border-radius: 16px;
             overflow: hidden;
+        }
+
+        /* 品牌故事卡片版型 */
+        .story-card {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0;
             margin-bottom: 50px;
-            box-shadow: 0 8px 25px rgba(30, 77, 59, 0.08);
-            backdrop-filter: blur(8px);
         }
 
         .story-img {
@@ -261,18 +266,13 @@
         }
 
         .menu-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            overflow: hidden;
             transition: transform 0.3s, border-color 0.3s;
-            box-shadow: 0 4px 15px rgba(30, 77, 59, 0.05);
-            backdrop-filter: blur(8px);
+            border-radius: 12px;
         }
 
         .menu-card:hover {
             transform: translateY(-5px);
-            border-color: var(--soft-emerald);
+            border-color: var(--soft-emerald) !important;
         }
 
         .menu-img {
@@ -317,12 +317,9 @@
         }
 
         .craft-item {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(30, 77, 59, 0.04);
         }
 
         .craft-icon {
@@ -346,17 +343,12 @@
 
         /* 毛爸毛媽好評見證區塊 */
         .review-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
             padding: 28px;
             display: grid;
             grid-template-columns: 200px 1fr;
             gap: 22px;
             align-items: center;
             margin-bottom: 50px;
-            box-shadow: 0 8px 25px rgba(30, 77, 59, 0.06);
-            backdrop-filter: blur(8px);
         }
 
         .review-img {
@@ -382,12 +374,13 @@
 
         /* 哥吉拉獨家促銷福利卡片 */
         .godzilla-banner {
-            background: linear-gradient(135deg, rgba(6,199,85,0.1), rgba(243,247,244,0.95));
-            border: 2px solid var(--neon-line);
+            background: rgba(255, 255, 255, 0.88) !important;
+            backdrop-filter: blur(12px) !important;
+            border: 2px solid var(--neon-line) !important;
             border-radius: 16px;
             padding: 32px 20px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(6, 199, 85, 0.15);
+            box-shadow: 0 8px 25px rgba(6, 199, 85, 0.2) !important;
             margin-bottom: 40px;
         }
 
@@ -426,12 +419,12 @@
             border-radius: 8px;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.35);
         }
 
         /* 頁尾資訊 */
         footer {
-            border-top: 1px solid var(--card-border);
+            border-top: 1px solid rgba(30, 77, 59, 0.2);
             padding: 25px 20px;
             text-align: center;
             color: var(--text-gray);
@@ -486,7 +479,7 @@
                 創辦人安琪擁有社工背景，曾經夢想成為救人的醫生。在與自家老吉娃娃「豆豆」相伴的歲月中，深刻體會到寵物對人類無條件的愛。這份同理心，成為她與資深美容師阿傑創立工作室的核心——我們不只提供洗護，更注重毛孩在洗澡剪毛時的心理感受。</p>
                 
                 <p><strong>【1 對 1 溫感照護，打造無壓力的洗護體驗】</strong><br>
-                我們堅持不催促、不打罵、絕不長時間關籠。從桃園巷弄小店出發，憑藉對環境消毒與低敏洗劑的堅持，在 Google 地圖累積了 200+ 則實名 5 星好評，成為在地毛爸毛妈最放心的寵物洗護殿堂。</p>
+                我們堅持不催促、不打罵、絕不長時間關籠。從桃園巷弄小店出發，憑藉對環境消毒與低敏洗劑的堅持，在 Google 地圖累積了 200+ 則實名 5 星好評，成為在地毛爸毛媽最放心的寵物洗護殿堂。</p>
                 
                 <p class="story-highlight">
                 「雖然沒有穿上醫生的白袍，但能成為守護毛孩健康與笑容的白衣天使，就是我們最驕傲的事。」
